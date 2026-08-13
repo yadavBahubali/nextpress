@@ -1,0 +1,192 @@
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Simple video modal used to replace the Fancybox popup */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Mobile off-canvas menu open state, controlled by React instead of jQuery */
+.off-canvas-menubar.active {
+  right: 0;
+}
+
+.off-canvas-menubar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.off-canvas-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.off-canvas-menu > ul > li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.off-canvas-menu a {
+  display: block;
+  padding: 12px 0;
+  color: inherit;
+}
+
+.off-canvas-menu .sub-menu {
+  padding-left: 15px;
+  display: none;
+}
+
+.off-canvas-menu li.menu-open > .sub-menu {
+  display: block;
+}
+
+.off-canvas-menu .has-dropdown > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop dropdown, hover-controlled purely via CSS (matches original theme behaviour) */
+.main-menu .has-dropdown {
+  position: relative;
+}
+
+.main-menu .has-dropdown .sub-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+}
+
+.main-menu .has-dropdown:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* The original theme's hero overlay (.blur-circle) is a fully-opaque
+   dark navy gradient — lightened here so the banner photos stay visible. */
+/* .hero-slide-2 .blur-circle {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 16, 45, 0.35) 0%,
+    rgba(0, 16, 45, 0) 100%
+  ) !important;
+} */
+
+/* Startup Product Launched — stacked/fanned card slider */
+.product-showcase {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.product-showcase-swiper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: visible !important;
+}
+
+.product-showcase-swiper .swiper-slide {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f9c9a0, #f7a666);
+  opacity: 0.55;
+}
+
+.product-showcase-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+.product-showcase-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.product-showcase-swiper .swiper-slide-active .product-showcase-card {
+  border: 6px solid var(--theme-color-2, #f47b20);
+  box-sizing: border-box;
+}
+
+.product-showcase-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-showcase-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.product-showcase-prev,
+.product-showcase-next {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #204078;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.product-showcase-prev:hover,
+.product-showcase-next:hover {
+  background: var(--theme-color-2, #f47b20);
+}
+
