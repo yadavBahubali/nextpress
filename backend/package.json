@@ -32,7 +32,7 @@
     "nodemailer": "^8.0.8",
     "slugify": "^1.6.9",
     "uuid": "^14.0.0",
-    "zod": "^4.4.3"
+    "zod": "^4.6.6"
   },
   "allowScripts": {
     "bcrypt@6.0.0": true
